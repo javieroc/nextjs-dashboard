@@ -2,7 +2,44 @@ import Link from "next/link";
 import Head from "next/head";
 
 export default class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displaySlideMenu: false
+    };
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
+  toggleSidebar = displaySlideMenu => {
+    this.setState({
+      displaySlideMenu
+    });
+  };
+
+  setWrapperRef = node => {
+    this.wrapperRef = node;
+  };
+
+  handleClickOutside = event => {
+    const { displaySlideMenu } = this.state;
+    if (
+      this.wrapperRef &&
+      !this.wrapperRef.contains(event.target) &&
+      displaySlideMenu
+    ) {
+      this.toggleSidebar(false);
+    }
+  };
+
   render() {
+    const { displaySlideMenu } = this.state;
     const { children, title } = this.props;
 
     return (
@@ -11,7 +48,7 @@ export default class Layout extends React.Component {
           <title>{title}</title>
           <link rel="stylesheet" href="static/styles.css" />
         </Head>
-        <div className="menu-icon">
+        <div className="menu-icon" onClick={() => this.toggleSidebar(true)}>
           <i className="fas fa-bars header-menu" />
         </div>
 
@@ -20,8 +57,15 @@ export default class Layout extends React.Component {
           <div className="header-avatar">Your face</div>
         </header>
 
-        <aside className="sidenav">
-          <div className="sidenav-close-icon">
+        <aside
+          ref={this.setWrapperRef}
+          className={`sidenav ${displaySlideMenu && "active"}`}
+        >
+          <div
+            role="button"
+            className="sidenav-close-icon"
+            onClick={() => this.toggleSidebar(false)}
+          >
             <i className="fas fa-times sidenav-brand-close" />
           </div>
           <ul className="sidenav-list">
