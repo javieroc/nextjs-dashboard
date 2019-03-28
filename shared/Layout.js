@@ -12,32 +12,32 @@ export default class Layout extends React.Component {
           <link rel="stylesheet" href="static/styles.css" />
         </Head>
         <div className="menu-icon">
-          <i className="fas fa-bars header__menu" />
+          <i className="fas fa-bars header-menu" />
         </div>
 
         <header className="header">
-          <div className="header__search">Search...</div>
-          <div className="header__avatar">Your face</div>
+          <div className="header-search">Search...</div>
+          <div className="header-avatar">Your face</div>
         </header>
 
         <aside className="sidenav">
-          <div className="sidenav__close-icon">
-            <i className="fas fa-times sidenav__brand-close" />
+          <div className="sidenav-close-icon">
+            <i className="fas fa-times sidenav-brand-close" />
           </div>
-          <ul className="sidenav__list">
-            <li className="sidenav__list-item">Item One</li>
-            <li className="sidenav__list-item">Item Two</li>
-            <li className="sidenav__list-item">Item Three</li>
-            <li className="sidenav__list-item">Item Four</li>
-            <li className="sidenav__list-item">Item Five</li>
+          <ul className="sidenav-list">
+            <li className="sidenav-list-item">Item One</li>
+            <li className="sidenav-list-item">Item Two</li>
+            <li className="sidenav-list-item">Item Three</li>
+            <li className="sidenav-list-item">Item Four</li>
+            <li className="sidenav-list-item">Item Five</li>
           </ul>
         </aside>
 
         <main className="main">{children}</main>
 
         <footer className="footer">
-          <div className="footer__copyright">&copy; 2018 MTH</div>
-          <div className="footer__signature">Made with love by pure genius</div>
+          <div className="footer-copyright">&copy; 2019 MIT</div>
+          <div className="footer-signature">by Dev & Coffee</div>
         </footer>
 
         <style jsx global>{`
@@ -45,7 +45,7 @@ export default class Layout extends React.Component {
           body {
             margin: 0;
             padding: 0;
-            color: #fff;
+            color: #161426;
             font-family: "Open Sans", Helvetica, sans-serif;
             box-sizing: border-box;
           }
