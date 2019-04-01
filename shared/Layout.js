@@ -69,11 +69,21 @@ export default class Layout extends React.Component {
             <i className="fas fa-times sidenav-brand-close" />
           </div>
           <ul className="sidenav-list">
-            <li className="sidenav-list-item">Item One</li>
-            <li className="sidenav-list-item">Item Two</li>
-            <li className="sidenav-list-item">Item Three</li>
-            <li className="sidenav-list-item">Item Four</li>
-            <li className="sidenav-list-item">Item Five</li>
+            <li className="sidenav-list-item">
+              <Link href={`/user`} prefetch>
+                <a>User</a>
+              </Link>
+            </li>
+            <li className="sidenav-list-item">
+              <Link href={`/stats`} prefetch>
+                <a>Stats</a>
+              </Link>
+            </li>
+            <li className="sidenav-list-item">
+              <Link href={`/settings`} prefetch>
+                <a>Settings</a>
+              </Link>
+            </li>
           </ul>
         </aside>
 
