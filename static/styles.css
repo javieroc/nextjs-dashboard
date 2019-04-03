@@ -26,14 +26,10 @@
   grid-area: header;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 16px;
   color: #161426;
   background-color: #fefaf1;
-}
-
-.header-search {
-  margin-left: 42px;
 }
 
 .sidenav {
@@ -46,9 +42,23 @@
   overflow-y: auto;
   transform: translateX(-245px);
   transition: all 0.6s ease-in-out;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   z-index: 2;
   background-color: #3e3259;
+}
+
+.sidenav-brand {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  height: 50px;
+  background-color: #ffffff;
+}
+
+.sidenav-brand img {
+  width: 100%;
+  max-height: 50px;
 }
 
 .sidenav.active {

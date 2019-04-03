@@ -53,7 +53,6 @@ export default class Layout extends React.Component {
         </div>
 
         <header className="header">
-          <div className="header-search">Search...</div>
           <div className="header-avatar">Your face</div>
         </header>
 
@@ -61,13 +60,22 @@ export default class Layout extends React.Component {
           ref={this.setWrapperRef}
           className={`sidenav ${displaySlideMenu && "active"}`}
         >
-          <div
-            role="button"
-            className="sidenav-close-icon"
-            onClick={() => this.toggleSidebar(false)}
-          >
-            <i className="fas fa-times sidenav-brand-close" />
+          <div className="sidenav-brand">
+            <Link href={`/`} prefetch>
+              <a>
+                <img src="static/logo.png" />
+              </a>
+            </Link>
+
+            <div
+              role="button"
+              className="sidenav-close-icon"
+              onClick={() => this.toggleSidebar(false)}
+            >
+              <i className="fas fa-times sidenav-brand-close" />
+            </div>
           </div>
+
           <ul className="sidenav-list">
             <li className="sidenav-list-item">
               <Link href={`/user`} prefetch>
